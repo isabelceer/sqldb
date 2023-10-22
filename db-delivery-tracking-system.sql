@@ -17,7 +17,7 @@ CREATE TABLE packages (
     sender_id integer,
 	recipient_id integer,
 	weight integer,
-	dimension integer,
+	dimension char(1) CHECK (dimension IN ('S', 'M', 'L')),
 	FOREIGN KEY (sender_id) REFERENCES customers(customer_id),
 	FOREIGN KEY (recipient_id) REFERENCES customers(customer_id)
 );
